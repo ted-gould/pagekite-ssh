@@ -1,0 +1,19 @@
+name: pagekite-ssh
+version: '1'
+summary: Connects the local SSH daemon to the Pagekite service
+description: |
+ Pagekit provides a way to tunnel local TCP traffic to a well
+ known name on the Internet. This package makes it so that your
+ SSH server is accessible no matter where it sits.
+
+grade: stable
+confinement: strict
+
+parts:
+  pypagekite:
+    plugin: python
+    source: https://github.com/ted-gould/PyPagekite.git
+    after: [pysocksipychain]
+  pysocksipychain:
+    plugin: python
+    source: https://github.com/pagekite/PySocksipyChain.git
