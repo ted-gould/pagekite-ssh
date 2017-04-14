@@ -12,8 +12,10 @@ confinement: strict
 parts:
   pypagekite:
     plugin: python
+    python-version: python2
     source: https://github.com/ted-gould/PyPagekite.git
     after: [pysocksipychain]
   pysocksipychain:
     plugin: python
+    python-version: python2
     source: https://github.com/pagekite/PySocksipyChain.git
