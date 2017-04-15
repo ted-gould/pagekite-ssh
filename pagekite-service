@@ -2,4 +2,4 @@
 
 set -ex
 
-exec python $SNAP/bin/pagekite
+exec python $SNAP/bin/pagekite --clean --nullui --all --optfile $SNAP_DATA/pagekite.rc
