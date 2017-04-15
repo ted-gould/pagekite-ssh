@@ -1,0 +1,9 @@
+#!/bin/sh
+
+KITECONFIG=${SNAP_DATA}/pagekite.rc
+
+KITENAME=`snapctl get pagekite-user`
+KITESECRET=`snapctl get pagekite-secret`
+
+echo "service_on=raw/22:${KITENAME}.pagekite.me:localhost:22:${KITESECERT}" > ${KITECONFIG}
+

@@ -20,12 +20,8 @@ parts:
     python-version: python2
     source: https://github.com/pagekite/PySocksipyChain.git
   snapstuff:
-    plugin: python
-    python-version: python2
-    install: |
-      mkdir -p $SNAPCRAFT_PART_INSTALL/snap/hooks
-      cp configure_hook.py $SNAPCRAFT_PART_INSTALL/snap/hooks/configure
-      cp pagekite-service $SNAPCRAFT_PART_INSTALL/
+    plugin: dump
+    source: snapstuff
 
 apps:
   pagekite-ssh:
