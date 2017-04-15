@@ -2,8 +2,12 @@
 
 KITECONFIG=${SNAP_DATA}/pagekite.rc
 
-KITENAME=`snapctl get pagekite-user`
-KITESECRET=`snapctl get pagekite-secret`
+KITENAME=`snapctl get kitename`
+KITESECRET=`snapctl get kitesecret`
 
-echo "service_on=raw/22:${KITENAME}.pagekite.me:localhost:22:${KITESECRET}" > ${KITECONFIG}
-
+echo "# Built by config hook" > ${KITECONFIG}
+echo "kitename   = ${KITENAME}"   >> ${KITECONFIG}
+echo "kitesecret = ${KITESECRET}" >> ${KITECONFIG}
+echo "service_on=raw-22:@kitename :localhost:22 : @kitesecret" >> ${KITECONFIG}
+echo "savefile = ${KITECONFIG}" >> ${KITECONFIG}
+echo "END" >> ${KITECONFIG}
