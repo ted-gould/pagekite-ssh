@@ -2,7 +2,11 @@
 
 set -ex
 
-NAME=`snapctl get kitename`
-SECRET=`snapctl get kitesecret`
+KITECONFIG=${SNAP_DATA}/pagekite-settings
 
-exec $SNAP/bin/sshkite ${NAME} ${SECRET}
+if [ ! -x ${KITECONFIG} ] ; then
+	echo "No config"
+	exit 1
+fi
+
+exec $SNAP/bin/sshkite `echo ${KITECONFIG}`

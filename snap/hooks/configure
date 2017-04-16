@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -ex
+
+KITECONFIG=${SNAP_DATA}/pagekite-settings
+
+KITENAME=`snapctl get kitename`
+KITESECRET=`snapctl get kitesecret`
+
+echo "${KITENAME} ${KITESECRET}" > ${KITECONFIG}
