@@ -10,15 +10,14 @@ grade: stable
 confinement: strict
 
 parts:
-  pypagekite:
-    plugin: python
-    python-version: python2
-    source: https://github.com/ted-gould/PyPagekite.git
-    after: [pysocksipychain]
-  pysocksipychain:
-    plugin: python
-    python-version: python2
-    source: https://github.com/pagekite/PySocksipyChain.git
+  pagekite:
+    plugin: autotools
+    configflags:
+      - --without-java
+      - --without-lua
+    source: https://github.com/pagekite/libpagekite.git
+    build-packages:
+      - libev-dev
   snapstuff:
     plugin: dump
     source: snapstuff

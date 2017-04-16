@@ -2,4 +2,7 @@
 
 set -ex
 
-exec python $SNAP/bin/pagekite --clean --nullui --all --optfile $SNAP_DATA/pagekite.rc
+NAME=`snapctl get kitename`
+SECRET=`snapctl get kitesecret`
+
+exec $SNAP/bin/sshkite ${NAME} ${SECRET}
