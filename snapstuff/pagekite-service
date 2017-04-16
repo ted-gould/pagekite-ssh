@@ -9,4 +9,4 @@ if [ ! -x ${KITECONFIG} ] ; then
 	exit 1
 fi
 
-exec $SNAP/bin/sshkite `echo ${KITECONFIG}`
+exec $SNAP/bin/sshkite `cat ${KITECONFIG}`
