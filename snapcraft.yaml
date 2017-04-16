@@ -18,6 +18,7 @@ parts:
     source: https://github.com/pagekite/libpagekite.git
     build-packages:
       - libev-dev
+      - pkg-config
   snapstuff:
     plugin: dump
     source: snapstuff
