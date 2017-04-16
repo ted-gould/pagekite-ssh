@@ -19,6 +19,8 @@ parts:
     build-packages:
       - libev-dev
       - pkg-config
+      - libssl-dev
+      - openssl
   snapstuff:
     plugin: dump
     source: snapstuff
