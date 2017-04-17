@@ -4,7 +4,7 @@ set -ex
 
 KITECONFIG=${SNAP_DATA}/pagekite-settings
 
-if [ ! -x ${KITECONFIG} ] ; then
+if [ ! -f ${KITECONFIG} ] ; then
 	echo "No config"
 	exit 1
 fi
